@@ -1,0 +1,36 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "movie_title",
+          "year",
+          "location_text",
+          "city",
+          "region",
+          "country",
+          "latitude",
+          "longitude",
+          "source_url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "movie_title": { "label": "Movie", "format": "text" },
+          "year": { "label": "Year", "format": "text" },
+          "location_text": { "label": "Location text", "format": "text" },
+          "city": { "label": "City", "format": "text" },
+          "region": { "label": "Region/State", "format": "text" },
+          "country": { "label": "Country", "format": "text" },
+          "latitude": { "label": "Latitude", "format": "text" },
+          "longitude": { "label": "Longitude", "format": "text" },
+          "source_url": { "label": "Source URL", "format": "link" }
+        }
+      }
+    }
+  }
+}

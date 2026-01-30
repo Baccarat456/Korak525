@@ -1,0 +1,18 @@
+{
+  "actorSpecification": 1,
+  "name": "Movie shooting locations scraper",
+  "title": "Movie shooting locations scraper",
+  "description": "Crawl pages (IMDb filming locations, Wikipedia, film commission pages) and extract movie shooting/filming location records (movie, year, location text, city, country, coordinates, source).",
+  "version": "0.0",
+  "meta": {
+    "templateId": "ai-generated-actor",
+    "generatedBy": "Gpt-4o-mini"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json",
+    "keyValueStore": "./kv_schema.json"
+  },
+  "dockerfile": "../Dockerfile"
+}

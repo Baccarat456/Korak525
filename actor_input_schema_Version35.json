@@ -1,0 +1,57 @@
+{
+  "title": "Input schema of the Movie shooting locations scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "Seed pages to start crawling from (IMDb filming locations pages, Wikipedia film pages, local film commission directories).",
+      "editor": "requestListSources",
+      "prefill": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Inception"
+        },
+        {
+          "url": "https://www.imdb.com/title/tt1375666/locations"
+        }
+      ]
+    },
+    "maxRequestsPerCrawl": {
+      "title": "Max Requests per Crawl",
+      "type": "integer",
+      "description": "Maximum number of HTTP requests that can be made by this crawler.",
+      "default": 500
+    },
+    "useBrowser": {
+      "title": "Use Playwright (for JS-heavy pages)",
+      "type": "boolean",
+      "description": "If true, use PlaywrightCrawler for pages which require JS rendering (slower but more accurate).",
+      "default": false
+    },
+    "useWikipediaApi": {
+      "title": "Use Wikipedia API for enrichment",
+      "type": "boolean",
+      "description": "If true, attempt to fetch and parse the Wikipedia API (MediaWiki) version of pages for cleaner 'Filming locations' extraction.",
+      "default": true
+    },
+    "followInternalOnly": {
+      "title": "Follow internal links only",
+      "type": "boolean",
+      "description": "If true, only follow links within the same host as each start URL.",
+      "default": true
+    },
+    "concurrency": {
+      "title": "Concurrency",
+      "type": "integer",
+      "description": "Number of parallel requests (CheerioCrawler). Lower for politeness.",
+      "default": 10
+    },
+    "validateCoordinates": {
+      "title": "Validate coordinates (reverse geocode)",
+      "type": "boolean",
+      "description": "If true, optionally call a geocoding service to validate/extract city/country from coordinates. (Not included; placeholder for integration.)",
+      "default": false
+    }
+  }
+}
